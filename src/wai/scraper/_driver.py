@@ -3,19 +3,20 @@ from selenium import webdriver
 from wai.scraper import logger
 
 
-def init_driver(debug):
+def init_driver(interactive):
     """
     Initializes the (Firefox) driver.
 
-    :param debug: whether to run in debug mode (ie displaying the browser)
-    :type debug: bool
+    :param interactive: whether to run in interactive mode (ie displaying the browser), required for when off-campus
+                        due to the interactive 2FA
+    :type interactive: bool
     :return: the driver instance
     :rtype: webdriver.Firefox
     """
 
-    logger().debug("initializing driver (debug=%s)" % str(debug))
+    logger().debug("initializing driver (interactive=%s)" % str(interactive))
     options = webdriver.FirefoxOptions()
-    options.headless = not debug
+    options.headless = not interactive
     return Firefox(options=options)
 
 
