@@ -10,11 +10,29 @@ However, when off-campus, it is necessary to run it in interactive mode (`init_d
 in order to tick the *Remember me for 30 days* box and click on the *Send me a push* button to 
 accept the authentication on your mobile device. 
 
+The use of selenium was inspired by:
+https://stackoverflow.com/a/23929939/4698227
+
 
 ## Installation
 
+Install *npm* and the *Firefox* driver for selenium:
+
 ```commandline
-pip install git+https://github.com/fracpete/wai-scraper.git
+# install npm:
+sudo apt-get install npm
+# install firefox driver
+sudo npm install -g geckodriver
+```
+
+Create a virtual environment:
+```commandline
+virtualenv -p /usr/bin/python3.7 venv
+```
+
+Install *wai.scraper* in the virtual environment: 
+```commandline
+./venv/bin/pip install git+https://github.com/fracpete/wai-scraper.git
 ```
 
 
