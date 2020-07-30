@@ -62,4 +62,4 @@ def requests_get(driver, msg, url):
     """
 
     logger().info(msg + ": " + url)
-    return driver.request('GET', 'https://coursecast.its.waikato.ac.nz/Panopto/Pages/Sessions/List.aspx#folderID="5ff7fc2a-8b1d-4a37-b222-bc14e92a480f"')
+    return driver.request('GET', url)
