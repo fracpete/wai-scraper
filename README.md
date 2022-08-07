@@ -16,18 +16,28 @@ https://stackoverflow.com/a/23929939/4698227
 
 ## Installation
 
+Prepare *npm*
+
+```bash
+# create "global" npm installation in home dir
+mkdir ~/.npm-global
+# add folowing to your ~/.bashrc
+NPM_CONFIG_PREFIX=~/.npm-global
+source . ~/.bashrc
+```
+
 Install *npm* and the *Firefox* driver for selenium:
 
-```commandline
+```bash
 # install npm:
 sudo apt-get install npm
 # install firefox driver
-sudo npm install -g geckodriver
+npm install -g "geckodriver@<2.0.0"
 ```
 
 Create a virtual environment:
-```commandline
-virtualenv -p /usr/bin/python3.7 venv
+```bash
+virtualenv -p /usr/bin/python3 venv
 ```
 
 Install *wai.scraper* in the virtual environment: 
