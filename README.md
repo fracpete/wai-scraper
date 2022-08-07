@@ -54,6 +54,7 @@ The following example logs into the university website via [SSO](https://en.wiki
 and outputs the HTML content of the staff landing page.
 
 ```python
+import getpass
 import wai.scraper as ws
 
 # initialize logger with debugging output
@@ -63,7 +64,9 @@ ws.init_logger(True)
 driver = ws.init_driver(True)
 
 # perform logins
-ws.sso(driver, "USER", "PASSWORD", delay=15)
+user = input("Enter user: ")
+pw = getpass.getpass("Enter password: ")
+ws.sso(driver, user, pw, delay=15)
 
 url = 'https://www.waikato.ac.nz/landing/staff.shtml'
 
