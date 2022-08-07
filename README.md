@@ -21,9 +21,11 @@ Prepare *npm*
 ```bash
 # create "global" npm installation in home dir
 mkdir ~/.npm-global
-# add folowing to your ~/.bashrc
-NPM_CONFIG_PREFIX=~/.npm-global
-source . ~/.bashrc
+# add folowing to your ~/.profile
+# https://stackoverflow.com/a/49714908/4698227
+npm config set prefix '~/.npm-global'
+export PATH=~/.npm-global/bin:$PATH
+source . ~/.profile
 ```
 
 Install *npm* and the *Firefox* driver for selenium:
