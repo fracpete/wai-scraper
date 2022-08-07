@@ -36,6 +36,7 @@ setup(
     author='Peter Reutemann',
     author_email='fracpete@waikato.ac.nz',
     install_requires=[
-        "selenium-requests"
+        "selenium<4.0.0",
+        "selenium-requests<2.0.0",
     ],
 )
