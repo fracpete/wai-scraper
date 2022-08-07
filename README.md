@@ -49,9 +49,7 @@ Install *wai.scraper* in the virtual environment:
 ## Example
 
 The following example logs into the university website via [SSO](https://en.wikipedia.org/wiki/Single_sign-on) 
-and into [Panopto](https://en.wikipedia.org/wiki/Panopto).
-It then retrieves the same URL twice, once via the selenium webdriver and once via 
-selenium-requests.
+and outputs the HTML content of the staff landing page.
 
 ```python
 import wai.scraper as ws
@@ -64,19 +62,13 @@ driver = ws.init_driver(True)
 
 # perform logins
 ws.sso(driver, "USER", "PASSWORD", delay=15)
-ws.panopto(driver)
 
-url = 'https://coursecast.its.waikato.ac.nz/Panopto/Pages/Sessions/List.aspx#folderID="5ff7fc2a-8b1d-4a37-b222-bc14e92a480f"'
+url = 'https://www.waikato.ac.nz/landing/staff.shtml'
 
-# obtain panopto webpage via selenium
-ws.driver_get(driver, "panopto sessions list (driver)", url)
+# obtain staff landing page via selenium
+ws.driver_get(driver, "staff landing page", url)
 print("--> selenium")
 print(driver.page_source)
-
-# obtain panopto webpage via selenium-requests
-r = ws.requests_get(driver, "panopto sessions list (requests)", url)
-print("--> requests")
-print(r.text)
 
 # close the session
 ws.close_driver(driver)
