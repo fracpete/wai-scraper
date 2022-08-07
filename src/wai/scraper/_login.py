@@ -37,6 +37,7 @@ def panopto(driver, delay=5):
     """
 
     # log into coursecast
+    # TODO this has changed
     driver_get(driver, "panopto login", "https://coursecast.its.waikato.ac.nz/Panopto/Pages/Auth/Login.aspx")
     select = Select(driver.find_element_by_id("providerDropdown"))
     select.select_by_visible_text('elearn')
