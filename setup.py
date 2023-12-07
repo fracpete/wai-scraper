@@ -1,5 +1,6 @@
 from setuptools import setup, find_namespace_packages
 
+
 def _read(f) -> bytes:
     """
     Reads in the content of the file.
@@ -36,7 +37,7 @@ setup(
     author='Peter Reutemann',
     author_email='fracpete@waikato.ac.nz',
     install_requires=[
-        "selenium<4.0.0",
-        "selenium-requests<2.0.0",
+        "selenium",
+        "selenium-requests",
     ],
 )
